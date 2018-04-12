@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,29 +11,38 @@ namespace IsFibo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine(FindFibonacciNumberUsingRecurrsion(40));
-            Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(FindFibonacciNumberUsingRecurrsion(40));
+            //Console.WriteLine(DateTime.Now);
 
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine(FindFibonacciNumberUsingDP(4));
-            Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(FindFibonacciNumberUsingDP(4));
+            //Console.WriteLine(DateTime.Now);
 
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine(FindFibonacciNumberUsingDPSpaceOptimized(4));
-            Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(FindFibonacciNumberUsingDPSpaceOptimized(4));
+            //Console.WriteLine(DateTime.Now);
 
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine(FindFibonacciNumberUsingBaseMatrix(4));
-            Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(FindFibonacciNumberUsingBaseMatrix(4));
+            //Console.WriteLine(DateTime.Now);
 
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine(FindFibonacciNumberUsingMemoization(40));
-            Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(FindFibonacciNumberUsingMemoization(40));
+            //Console.WriteLine(DateTime.Now);
 
-            Console.WriteLine(DateTime.Now);
-            IsFibo(34);
-            Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(DateTime.Now);
+            //IsFibo(34);
+            //Console.WriteLine(DateTime.Now);
+
+            ModifiedFibonacci mf = new ModifiedFibonacci();
+            string[] tokens_t1 = Console.ReadLine().Split(' ');
+            int t1 = Convert.ToInt32(tokens_t1[0]);
+            int t2 = Convert.ToInt32(tokens_t1[1]);
+            int n = Convert.ToInt32(tokens_t1[2]);
+            BigInteger result = mf.fibonacciModifiedUsingRecurssion(t1, t2, n);
+            Console.WriteLine(result);
+
             Console.Read();
         }
 
