@@ -16,7 +16,11 @@ namespace IsFibo
             //Console.WriteLine(DateTime.Now);
 
             //Console.WriteLine(DateTime.Now);
-            //Console.WriteLine(FindFibonacciNumberUsingDP(4));
+            for (long i = 1; i < 310; i++)
+            {
+                Console.WriteLine(i + " :: " + FindFibonacciNumberUsingDP(i));
+            }
+
             //Console.WriteLine(DateTime.Now);
 
             //Console.WriteLine(DateTime.Now);
@@ -35,13 +39,13 @@ namespace IsFibo
             //IsFibo(34);
             //Console.WriteLine(DateTime.Now);
 
-            ModifiedFibonacci mf = new ModifiedFibonacci();
-            string[] tokens_t1 = Console.ReadLine().Split(' ');
-            int t1 = Convert.ToInt32(tokens_t1[0]);
-            int t2 = Convert.ToInt32(tokens_t1[1]);
-            int n = Convert.ToInt32(tokens_t1[2]);
-            BigInteger result = mf.fibonacciModifiedUsingRecurssion(t1, t2, n);
-            Console.WriteLine(result);
+            //ModifiedFibonacci mf = new ModifiedFibonacci();
+            //string[] tokens_t1 = Console.ReadLine().Split(' ');
+            //int t1 = Convert.ToInt32(tokens_t1[0]);
+            //int t2 = Convert.ToInt32(tokens_t1[1]);
+            //int n = Convert.ToInt32(tokens_t1[2]);
+            //BigInteger result = mf.fibonacciModifiedUsingRecurssion(t1, t2, n);
+            //Console.WriteLine(result);
 
             Console.Read();
         }
@@ -73,8 +77,8 @@ namespace IsFibo
         static long FindFibonacciNumberUsingDP(long n)
         {
             /* Declare an array to store Fibonacci numbers. */
-            int[] f = new int[n + 1];
-            int i;
+            long[] f = new long[n + 1];
+            long i;
 
             /* 0th and 1st number of the series are 0 and 1*/
             f[0] = 0;
@@ -85,6 +89,8 @@ namespace IsFibo
                 /* Add the previous 2 numbers in the series
                    and store it */
                 f[i] = f[i - 1] + f[i - 2];
+                //f[i] = (f[i - 1] + f[i - 2])% 10; --unit digit repeats itself after every 60 elements
+                //f[i] = (f[i - 1] + f[i - 2]) % 100; -- last two digits repeats them after every 300 elements
             }
 
             return f[n];
@@ -198,7 +204,7 @@ namespace IsFibo
         }
 
         static void IsFibo(long number)
-        {            
+        {
             if (IsPerfectSquare(5 * (number * number) + 4) || IsPerfectSquare(5 * (number * number) - 4))
             {
                 Console.WriteLine("IsFibo");
@@ -211,7 +217,7 @@ namespace IsFibo
 
         static bool IsPerfectSquare(double sqaure)
         {
-            return (Math.Sqrt(sqaure)) % 1 == 0 ? true : false;            
+            return (Math.Sqrt(sqaure)) % 1 == 0 ? true : false;
         }
     }
 }
